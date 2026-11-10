@@ -1,0 +1,30 @@
+diff --git a/js/app.js b/js/app.js
+index e02a0a5..3269705 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -29,6 +29,7 @@ function shell() {
+       ${brand()}
+       <nav class="topnav">
+         <a href="#/" class="navlink">Dashboard</a>
++        <a href="https://eloadev.github.io/lerping-tree/" class="navlink">Lerping Tree 🌳</a>
+       </nav>
+       ${themeButton()}
+       <button class="user-btn" id="user-btn" aria-label="Mi cuenta">
+diff --git a/js/invite.js b/js/invite.js
+index 619f820..95f08cb 100644
+--- a/js/invite.js
++++ b/js/invite.js
+@@ -30,10 +30,12 @@ export async function renderInvite(main, token) {
+       <h2>${esc(info.project_name)}</h2>
+       <p class="muted">Entrarás con el rol <b>${ROLE_LABEL[info.role]}</b>.</p>
+       <div class="row gap center">
+-        <a class="btn ghost" href="#/">Ahora no</a>
++        <button class="btn ghost" id="not-now">Ahora no</button>
+         <button class="btn" id="accept">Unirme al board</button>
+       </div>
+     </div></div>`;
++  // la URL ya es "#/" (se quitó el token), así que un link a "#/" no haría nada
++  $('#not-now', main).addEventListener('click', () => window.dispatchEvent(new HashChangeEvent('hashchange')));
+   $('#accept', main).addEventListener('click', async (e) => {
+     e.target.disabled = true;
+     try {
