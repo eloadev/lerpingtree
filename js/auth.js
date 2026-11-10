@@ -21,7 +21,7 @@ function shell(inner, pose = 'saludando') {
     <div class="auth-side">
       <p class="eyebrow">Eat <span class="hl-orange">Logic</span> Output <span class="hl-pink">Art</span></p>
       <h2>El calendario de ${eloaLogo('texto', 'inline-logo')}que crece contigo.</h2>
-      <p class="muted">Tareas, eventos y entregas del equipo. Palomea lo que ya hiciste y mira cómo crece el árbol. 🌳</p>
+      <p class="muted">Tareas, eventos y entregas del equipo. Palomea lo que ya hiciste y míralo en “Hechas”. 🌳</p>
       <p class="muted small">¿Ya tienes cuenta en LERPO? Es la misma: entra con tu correo y contraseña de siempre.</p>
     </div>
     <div class="auth-wrap">

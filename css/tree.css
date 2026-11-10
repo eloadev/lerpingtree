@@ -247,46 +247,6 @@ kbd { font-family: var(--mono); font-size: .7rem; padding: 1px 5px; border: 1px 
 .invite-card .cal-badge { width: 38px; height: 38px; font-size: 1.1rem; vertical-align: middle; }
 .notice.small { font-size: .85rem; }
 
-/* ---------- racha ---------- */
-.tree-hero { align-items: center; }
-.tree-art { position: relative; z-index: 1; display: grid; justify-items: center; flex-shrink: 0; }
-.tree-svg { max-width: min(360px, 80vw); height: auto; overflow: visible; }
-.tree-svg .ground { fill: color-mix(in srgb, var(--leaf) 16%, transparent); }
-.tree-svg .trunk line { stroke: color-mix(in srgb, #8a5a3b 85%, var(--ink)); stroke-linecap: round; }
-.tree-svg .leaves path { transform-box: fill-box; transform-origin: center; animation: leaf .5s cubic-bezier(.3, 1.6, .5, 1) backwards; stroke: color-mix(in srgb, var(--surface) 60%, transparent); stroke-width: .8; }
-.tree-svg .tree-more { font: 700 11px var(--font); fill: var(--muted); }
-@keyframes leaf { from { opacity: 0; scale: 0; } }
-.lerp-tree { position: absolute; right: -6px; bottom: 26px; width: 92px; }
-.streak-msg { font-weight: 700; color: var(--orange); margin-top: 6px; }
-.head-stats b { display: inline-flex; align-items: center; gap: 4px; }
-.head-stats b .ico { color: var(--orange); }
-.stat-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; margin: 22px 0 20px; }
-.card { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display: grid; gap: 14px; align-content: start; }
-.ring-row { display: flex; align-items: center; gap: 20px; }
-.ring circle { fill: none; stroke-width: 12; }
-.ring-bg { stroke: var(--surface-2); }
-.ring-fg { stroke: var(--leaf); stroke-linecap: round; transition: stroke-dasharray .6s; }
-.ring text { font: 800 24px var(--display); fill: var(--ink); }
-.mt-s { margin-top: 10px; }
-.leader { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.leader li { display: flex; align-items: center; gap: 10px; }
-.leader li.zero { opacity: .5; }
-.leader .pos { font-family: var(--mono); font-size: .75rem; color: var(--muted); width: 1.6ch; }
-.leader .who { width: 34%; font-weight: 600; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lbar { flex: 1; height: 10px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
-.lbar span { display: block; height: 100%; border-radius: 99px; background: var(--c); transition: width .5s; }
-.leader b { font-family: var(--display); min-width: 2ch; text-align: right; }
-.heat { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; }
-.hcol { display: grid; gap: 4px; }
-.hc { display: inline-block; width: 16px; height: 16px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
-.hc.l-1 { opacity: .3; }
-.hc.l1 { background: color-mix(in srgb, var(--leaf) 30%, var(--surface)); }
-.hc.l2 { background: color-mix(in srgb, var(--leaf) 55%, var(--surface)); }
-.hc.l3 { background: color-mix(in srgb, var(--leaf) 78%, var(--surface)); }
-.hc.l4 { background: var(--leaf); }
-.heat-legend { display: flex; align-items: center; gap: 4px; }
-.heat-legend .hc { width: 12px; height: 12px; }
-
 /* ---------- responsive ---------- */
 @media (hover: none) { .side-foot p { display: none; } .day-add { display: none; } }
 @media (max-width: 1100px) {
@@ -312,8 +272,6 @@ kbd { font-family: var(--mono); font-size: .7rem; padding: 1px 5px; border: 1px 
   .cal-row .icon-btn { opacity: 1; }
   .cal-head { padding: 10px 12px; gap: 6px; }
   .grid2 { grid-template-columns: 1fr; }
-  .stat-grid { grid-template-columns: 1fr; }
-  .tree-hero { flex-direction: column; align-items: stretch; }
 }
 @media (max-width: 700px) {
   .month { min-height: 0; grid-template-rows: 24px repeat(var(--weeks), minmax(92px, 1fr)); height: auto; }

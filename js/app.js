@@ -6,7 +6,6 @@ import {
 } from './ui.js';
 import { renderLogin, renderResetPassword, renderNotConfigured } from './auth.js';
 import { renderCalendar, leaveCalendar } from './calendar.js';
-import { renderStats } from './stats.js';
 import { renderJoin } from './join.js';
 import { initTheme, themeButton } from './theme.js';
 import { LERPO_URL } from './config.js';
@@ -21,7 +20,6 @@ function cleanUrl() {
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
   if (parts[0] === 'join' && parts[1]) return { name: 'join', token: parts[1] };
-  if (parts[0] === 'racha') return { name: 'stats' };
   if (parts[0] === 'agenda') return { name: 'calendar', view: 'agenda' };
   if (parts[0] === 'm' && /^\d{4}-\d{2}$/.test(parts[1] || '')) return { name: 'calendar', view: 'month', month: parts[1] };
   return { name: 'calendar', view: 'month' };
@@ -38,10 +36,8 @@ function shell() {
       ${brand()}
       <nav class="topnav">
         <a href="#/" class="navlink" data-nav="calendar">${icon('cal', 16)} Calendario</a>
-        <a href="#/racha" class="navlink" data-nav="stats">${icon('tree', 16)} Racha</a>
         <a href="${esc(LERPO_URL)}" class="navlink">LERPO ${icon('external', 14)}</a>
       </nav>
-      <a href="#/racha" class="icon-btn mobile-only" aria-label="Racha">${icon('tree')}</a>
       ${themeButton()}
       <button class="user-btn" id="user-btn" aria-label="Mi cuenta">
         <span id="user-avatar">${avatar(state.profile, 'md')}</span>
@@ -200,7 +196,6 @@ async function doRoute() {
     history.replaceState(null, '', location.pathname + '#/'); // no dejar el token en la URL
     return renderJoin(main, r.token);
   }
-  if (r.name === 'stats') { leaveCalendar(); return renderStats(main); }
   return renderCalendar(main, r);
 }
 

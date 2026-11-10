@@ -623,7 +623,6 @@ function renderDone() {
     <div class="done-stats">
       <div><b>${thisWeek.length}</b><span>esta semana</span></div>
       <div><b>${mine}</b><span>tuyas</span></div>
-      <a class="btn ghost small" href="#/racha">${icon('tree', 15)} Racha</a>
     </div>`;
   if (!list.length) {
     html += `<div class="done-empty">${lerp('mirandoArriba', 'lerp-empty-sm')}<p class="muted small">Aquí aparece lo que vayan palomeando. ¡La primera hoja es la más bonita! 🍃</p></div>`;
